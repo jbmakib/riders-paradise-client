@@ -1,0 +1,118 @@
+import { useState, useEffect } from "react";
+import {
+    getAuth,
+    createUserWithEmailAndPassword,
+    signInWithEmailAndPassword,
+    onAuthStateChanged,
+    updateProfile,
+    signOut,
+} from "firebase/auth";
+import initializeAuthentication from "../Pages/Login/Firebase/firebase.init";
+import axios from "axios";
+
+// initialize firebase app
+initializeAuthentication();
+
+const useFirebase = () => {
+    const [user, setUser] = useState({});
+    const [isLoading, setIsLoading] = useState(true);
+    const [error, setError] = useState("");
+    const [admin, setAdmin] = useState(false);
+
+    const auth = getAuth();
+
+    // create an user
+    const registerUser = (email, password, name, history) => {
+        setError("");
+        setIsLoading(true);
+        createUserWithEmailAndPassword(auth, email, password)
+            .then((userCredential) => {
+                const newUser = user;
+                newUser["displayName"] = name;
+                setUser(newUser);
+                // save user to the database
+                saveUser(email, name);
+
+                // send name to firebase after creation
+                updateProfile(auth.currentUser, {
+                    displayName: name,
+                })
+                    .then(() => {})
+                    .catch((error) => {});
+                history.push("/");
+            })
+            .catch((error) => {
+                setError(error.message);
+                console.log(error);
+            })
+            .finally(() => setIsLoading(false));
+    };
+
+    // login to website
+    const loginUser = (email, password, location, history) => {
+        setIsLoading(true);
+        signInWithEmailAndPassword(auth, email, password)
+            .then((userCredential) => {
+                const destination = location?.state?.from || "/";
+                history.replace(destination);
+                setError("");
+            })
+            .catch((error) => {
+                setError(error.message);
+            })
+            .finally(() => setIsLoading(false));
+    };
+
+    // observer user state
+    useEffect(() => {
+        const unsubscribed = onAuthStateChanged(auth, (user) => {
+            if (user) {
+                setUser(user);
+            } else {
+                setUser({});
+            }
+            setIsLoading(false);
+        });
+        return () => unsubscribed;
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
+
+    useEffect(() => {
+        fetch(`https://stark-caverns-04377.herokuapp.com/users/${user.email}`)
+            .then((res) => res.json())
+            .then((data) => setAdmin(data.admin));
+    }, [user.email]);
+
+    const logout = () => {
+        setIsLoading(true);
+        signOut(auth)
+            .then(() => {
+                // Sign-out successful.
+            })
+            .catch((error) => {
+                // An error happened.
+            })
+            .finally(() => setIsLoading(false));
+    };
+
+    const saveUser = (email, displayName) => {
+        const user = { email, displayName };
+        axios
+            .post("http://localhost:5000/users", user)
+            .then((res) => console.log(res))
+            .catch((err) => console.log(err));
+    };
+
+    return {
+        user,
+        admin,
+        isLoading,
+        error,
+        setError,
+        registerUser,
+        loginUser,
+        logout,
+    };
+};
+
+export default useFirebase;

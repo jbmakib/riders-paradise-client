@@ -1,9 +1,14 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
+import useAuth from "../../../hooks/useAuth";
 import registerImage from "../../../images/login-image.png";
 
 const Register = () => {
     const [registerInfo, setRegisterInfo] = useState({});
+
+    const history = useHistory();
+
+    const { registerUser, error, setError } = useAuth();
 
     const handleOnInput = (e) => {
         const field = e.target.name;
@@ -14,12 +19,18 @@ const Register = () => {
     };
 
     const handleRegisterForm = (e) => {
+        setError("");
         e.preventDefault();
         if (registerInfo.password !== registerInfo.password2) {
-            alert("Password not matched");
+            setError("Re-typed password not matched");
             return;
         }
-        console.log(registerInfo);
+        registerUser(
+            registerInfo.email,
+            registerInfo.password,
+            registerInfo.displayName,
+            history
+        );
     };
     return (
         <div className="container">
@@ -70,21 +81,42 @@ const Register = () => {
                                 type="password"
                                 required
                                 className="form-control"
-                                id="floatingPassword"
-                                placeholder="Password"
+                                id="floatingPassword2"
+                                placeholder="Re-Type Password"
                                 name="password2"
                                 onInput={handleOnInput}
                             />
-                            <label htmlFor="floatingPassword">Password</label>
+                            <label htmlFor="floatingPassword2">
+                                Re-Type Password
+                            </label>
                         </div>
                         <button type="submit" className="btn btn-primary my-3">
                             Register
                         </button>
                     </form>
                     Have an account? <Link to="/login">Login Now</Link>
+                    {error && (
+                        <div
+                            className="alert alert-danger my-3 d-flex justify-content-between py-0 align-items-center"
+                            role="alert"
+                        >
+                            <span>{error}</span>
+                            <span
+                                className="fs-3"
+                                role="button"
+                                onClick={() => setError("")}
+                            >
+                                &times;
+                            </span>
+                        </div>
+                    )}
                 </div>
                 <div className="col-12 col-lg-6">
-                    <img src={registerImage} alt="Register" className="w-100" />
+                    <img
+                        src={registerImage}
+                        alt="Register"
+                        className="w-100 my-4"
+                    />
                 </div>
             </div>
         </div>
