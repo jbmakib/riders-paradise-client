@@ -85,7 +85,8 @@ const useFirebase = () => {
                 if (data.role === "admin") {
                     setIsAdmin(true);
                 }
-            });
+            })
+            .catch((err) => {});
     }, [user.email]);
 
     const logOut = () => {
