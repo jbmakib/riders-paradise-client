@@ -1,5 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import MainNavbar from "../MainNavbar/MainNavbar";
 import NavbarToggler from "../NavbarToggler/NavbarToggler";
 import NavItem from "../NavItem/NavItem";
 import "./Header.css";
@@ -16,21 +17,10 @@ const Header = () => {
                     />
                 </NavLink>
                 <NavbarToggler />
-                <div
-                    className="collapse navbar-collapse"
-                    id="navbarSupportedContent"
-                >
-                    <ul
-                        className="
-                        navbar-nav
-                        align-items-center
-                        ms-auto
-                        mb-2 mb-lg-0
-                    "
-                    >
-                        <NavItem href="/">Home</NavItem>
-                        <NavItem href="/login">Login</NavItem>
-                        {/* {user.accessToken ? (
+                <MainNavbar>
+                    <NavItem href="/">Home</NavItem>
+                    <NavItem href="/login">Login</NavItem>
+                    {/* {user.accessToken ? (
                             <>
                                 <NavItem href="/my-orders">My Orders</NavItem>
                                 <NavItem href="/manage-orders">
@@ -67,8 +57,7 @@ const Header = () => {
                                 <NavItem href="/login">Login</NavItem>
                             </>
                         )} */}
-                    </ul>
-                </div>
+                </MainNavbar>
             </div>
         </nav>
     );
