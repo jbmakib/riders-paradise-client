@@ -12,11 +12,7 @@ const Header = () => {
         <nav className="navbar header navbar-expand-lg navbar-light sticky-top bg-white">
             <div className="container">
                 <NavLink className="navbar-brand" to="/">
-                    <img
-                        src="https://jbmakib.github.io/travel-site-bootstrap/images/logo.png"
-                        alt=""
-                        width="150px"
-                    />
+                    <h1 className="m-0">Paradise</h1>
                 </NavLink>
                 <NavbarToggler />
                 <MainNavbar>
