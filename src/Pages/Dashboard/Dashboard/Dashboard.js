@@ -4,6 +4,7 @@ import "./Dashboard.css";
 import { Switch, Route, useRouteMatch } from "react-router-dom";
 import AdminRoute from "../../Login/AdminRoute/AdminRoute";
 import DashboardMain from "../DashboardMain/DashboardMain";
+import MakeAdmin from "../MakeAdmin/MakeAdmin";
 
 const Dashboard = () => {
     const { path, url } = useRouteMatch();
@@ -17,7 +18,9 @@ const Dashboard = () => {
                     <Route exact path={path}>
                         <DashboardMain />
                     </Route>
-                    <AdminRoute path={`${path}/makeAdmin`}></AdminRoute>
+                    <AdminRoute path={`${path}/makeAdmin`}>
+                        <MakeAdmin />
+                    </AdminRoute>
                     <Route path={`${path}/*`}>
                         <DashboardMain />
                     </Route>

@@ -79,6 +79,8 @@ const useFirebase = () => {
     }, []);
 
     useEffect(() => {
+        setIsLoading(true);
+        setIsAdmin(false);
         fetch(
             `https://enigmatic-refuge-60972.herokuapp.com/users/${user.email}`
         )
@@ -87,6 +89,7 @@ const useFirebase = () => {
                 if (data.role === "admin") {
                     setIsAdmin(true);
                 }
+                setIsLoading(false);
             })
             .catch((err) => {});
     }, [user.email]);
