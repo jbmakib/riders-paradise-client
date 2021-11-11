@@ -12,15 +12,17 @@ const Dashboard = () => {
         <div className="dashboard">
             <DashboardNav url={url} />
             <div className="b-example-divider"></div>
-            <Switch>
-                <Route exact path={path}>
-                    <DashboardMain />
-                </Route>
-                <AdminRoute path={`${path}/makeAdmin`}></AdminRoute>
-                <Route path={`${path}/*`}>
-                    <DashboardMain />
-                </Route>
-            </Switch>
+            <div className="p-3 w-100">
+                <Switch>
+                    <Route exact path={path}>
+                        <DashboardMain />
+                    </Route>
+                    <AdminRoute path={`${path}/makeAdmin`}></AdminRoute>
+                    <Route path={`${path}/*`}>
+                        <DashboardMain />
+                    </Route>
+                </Switch>
+            </div>
         </div>
     );
 };
