@@ -3,6 +3,7 @@ import DashboardNav from "../DashboardNav/DashboardNav";
 import "./Dashboard.css";
 import { Switch, Route, useRouteMatch } from "react-router-dom";
 import AdminRoute from "../../Login/AdminRoute/AdminRoute";
+import DashboardMain from "../DashboardMain/DashboardMain";
 
 const Dashboard = () => {
     const { path, url } = useRouteMatch();
@@ -13,11 +14,12 @@ const Dashboard = () => {
             <div className="b-example-divider"></div>
             <Switch>
                 <Route exact path={path}>
-                    <div className="p-3">
-                        <h2>Eta Dashboard</h2>
-                    </div>
+                    <DashboardMain />
                 </Route>
                 <AdminRoute path={`${path}/makeAdmin`}></AdminRoute>
+                <Route path={`${path}/*`}>
+                    <DashboardMain />
+                </Route>
             </Switch>
         </div>
     );
