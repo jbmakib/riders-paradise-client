@@ -17,7 +17,7 @@ const useFirebase = () => {
     const [user, setUser] = useState({});
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState("");
-    const [admin, setAdmin] = useState(false);
+    const [isAdmin, setIsAdmin] = useState(false);
 
     const auth = getAuth();
 
@@ -27,9 +27,10 @@ const useFirebase = () => {
         setIsLoading(true);
         createUserWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
-                const newUser = user;
+                const newUser = userCredential.user;
                 newUser["displayName"] = name;
                 setUser(newUser);
+
                 // save user to the database
                 saveUser(email, name);
 
@@ -50,12 +51,12 @@ const useFirebase = () => {
 
     // login to website
     const loginUser = (email, password, location, history) => {
+        setError("");
         setIsLoading(true);
         signInWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
                 const destination = location?.state?.from || "/";
                 history.replace(destination);
-                setError("");
             })
             .catch((error) => {
                 setError(error.message);
@@ -78,9 +79,13 @@ const useFirebase = () => {
     }, []);
 
     useEffect(() => {
-        fetch(`https://stark-caverns-04377.herokuapp.com/users/${user.email}`)
+        fetch(`http://localhost:5000/users/${user.email}`)
             .then((res) => res.json())
-            .then((data) => setAdmin(data.admin));
+            .then((data) => {
+                if (data.role === "admin") {
+                    setIsAdmin(true);
+                }
+            });
     }, [user.email]);
 
     const logOut = () => {
@@ -99,13 +104,13 @@ const useFirebase = () => {
         const user = { email, displayName };
         axios
             .post("http://localhost:5000/users", user)
-            .then((res) => console.log(res))
-            .catch((err) => console.log(err));
+            .then((res) => {})
+            .catch((err) => {});
     };
 
     return {
         user,
-        admin,
+        isAdmin,
         isLoading,
         error,
         setError,

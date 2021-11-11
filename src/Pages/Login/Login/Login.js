@@ -1,9 +1,15 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory, useLocation } from "react-router-dom";
+import useAuth from "../../../hooks/useAuth";
 import loginImage from "../../../images/login-image.png";
 
 const Login = () => {
     const [loginInfo, setLoginInfo] = useState({});
+
+    const { error, loginUser, setError, isLoading } = useAuth();
+
+    const history = useHistory();
+    const location = useLocation();
 
     const handleOnInput = (e) => {
         const field = e.target.name;
@@ -15,43 +21,80 @@ const Login = () => {
 
     const handleLoginForm = (e) => {
         e.preventDefault();
-        console.log(loginInfo);
+        loginUser(loginInfo.email, loginInfo.password, location, history);
     };
     return (
         <div className="container">
             <div className="row gx-3 align-items-center">
                 <div className="col-12 col-lg-6 text-center">
                     <h1 className="text-primary">Login</h1>
-                    <form className="w-75 mx-auto" onSubmit={handleLoginForm}>
-                        <div className="form-floating mb-3">
-                            <input
-                                type="email"
-                                required
-                                className="form-control"
-                                id="floatingEmail"
-                                placeholder="Your Email"
-                                name="email"
-                                onInput={handleOnInput}
-                            />
-                            <label htmlFor="floatingEmail">Email address</label>
+                    {isLoading ? (
+                        <div
+                            className="spinner-border text-primary"
+                            role="status"
+                        >
+                            <span className="visually-hidden">Loading...</span>
                         </div>
-                        <div className="form-floating">
-                            <input
-                                type="password"
-                                required
-                                className="form-control"
-                                id="floatingPassword"
-                                placeholder="Password"
-                                name="password"
-                                onInput={handleOnInput}
-                            />
-                            <label htmlFor="floatingPassword">Password</label>
+                    ) : (
+                        <>
+                            <form
+                                className="w-75 mx-auto"
+                                onSubmit={handleLoginForm}
+                            >
+                                <div className="form-floating mb-3">
+                                    <input
+                                        type="email"
+                                        required
+                                        className="form-control"
+                                        id="floatingEmail"
+                                        placeholder="Your Email"
+                                        name="email"
+                                        onInput={handleOnInput}
+                                    />
+                                    <label htmlFor="floatingEmail">
+                                        Email address
+                                    </label>
+                                </div>
+                                <div className="form-floating">
+                                    <input
+                                        type="password"
+                                        required
+                                        className="form-control"
+                                        id="floatingPassword"
+                                        placeholder="Password"
+                                        name="password"
+                                        onInput={handleOnInput}
+                                    />
+                                    <label htmlFor="floatingPassword">
+                                        Password
+                                    </label>
+                                </div>
+                                <button
+                                    type="submit"
+                                    className="btn btn-primary my-3"
+                                >
+                                    Login
+                                </button>
+                            </form>
+                            New User?{" "}
+                            <Link to="/register">Create an account</Link>
+                        </>
+                    )}
+                    {error && (
+                        <div
+                            className="alert alert-danger my-3 d-flex justify-content-between py-0 align-items-center"
+                            role="alert"
+                        >
+                            <span>{error}</span>
+                            <span
+                                className="fs-3"
+                                role="button"
+                                onClick={() => setError("")}
+                            >
+                                &times;
+                            </span>
                         </div>
-                        <button type="submit" className="btn btn-primary my-3">
-                            Login
-                        </button>
-                    </form>
-                    New User? <Link to="/register">Create an account</Link>
+                    )}
                 </div>
                 <div className="col-12 col-lg-6">
                     <img src={loginImage} alt="Login" className="w-100" />
