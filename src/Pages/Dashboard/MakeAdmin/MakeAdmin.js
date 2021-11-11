@@ -14,7 +14,7 @@ const MakeAdmin = () => {
         setSuccess(false);
         e.preventDefault();
         axios
-            .put("http://localhost:5000/users/admin", {
+            .put("https://enigmatic-refuge-60972.herokuapp.com/users/admin", {
                 userEmail,
                 adminEmail: user.email,
             })
