@@ -1,10 +1,18 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
-const DashboardNavItem = ({ children }) => {
+const DashboardNavItem = ({ children, href }) => {
     return (
-        <div>
-            <h2>This is dash</h2>
-        </div>
+        <li>
+            <NavLink
+                to={href}
+                className="nav-link link-dark"
+                activeClassName="active"
+                exact
+            >
+                {children}
+            </NavLink>
+        </li>
     );
 };
 
