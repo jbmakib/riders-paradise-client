@@ -6,6 +6,7 @@ import AdminRoute from "../../Login/AdminRoute/AdminRoute";
 import DashboardMain from "../DashboardMain/DashboardMain";
 import MakeAdmin from "../MakeAdmin/MakeAdmin";
 import Pay from "../Pay/Pay";
+import Review from "../Review/Review";
 
 const Dashboard = () => {
     const { path, url } = useRouteMatch();
@@ -19,12 +20,17 @@ const Dashboard = () => {
                     <Route exact path={path}>
                         <DashboardMain />
                     </Route>
-                    <AdminRoute path={`${path}/makeAdmin`}>
-                        <MakeAdmin />
-                    </AdminRoute>
                     <Route path={`${path}/pay`}>
                         <Pay />
                     </Route>
+                    <Route path={`${path}/review`}>
+                        <Review />
+                    </Route>
+
+                    {/* admin routes */}
+                    <AdminRoute path={`${path}/makeAdmin`}>
+                        <MakeAdmin />
+                    </AdminRoute>
                     <Route path={`${path}/*`}>
                         <DashboardMain />
                     </Route>
