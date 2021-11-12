@@ -49,11 +49,15 @@ const BookProduct = () => {
         <div>
             <Header />
             <div className="container my-3">
-                <h2>Book product: {product.name}</h2>
+                <h2>
+                    Book product:{" "}
+                    <span className="text-purple">{product.name}</span>
+                </h2>
                 <img src={product.img} className="img-fluid" alt="Product" />
                 <h5>
                     Brand: <span className="fw-bold">{product.brand}</span>
                 </h5>
+                <p>Can Run: {product.kilometers} kilometers</p>
             </div>
             <Footer />
         </div>
