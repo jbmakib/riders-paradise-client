@@ -1,9 +1,20 @@
 import React from "react";
 import ReactStars from "react-rating-stars-component";
+import { Link } from "react-router-dom";
 import "./Product.css";
 
 const Product = ({
-    product: { _id, name, img, price, ownerShipSerial, kilometers, ratings },
+    product: {
+        _id,
+        name,
+        img,
+        price,
+        ownerShipSerial,
+        kilometers,
+        ratings,
+        brand,
+        year,
+    },
 }) => {
     const reactStartsInfo = {
         value: ratings.rate,
@@ -38,17 +49,25 @@ const Product = ({
                         </div>
                     </div>
                     <div className="pt-3 fw-bold card-title h5">{name}</div>
+                    <div className="d-flex justify-content-between align-items-center my-2">
+                        <p className="m-0 text-secondary">
+                            Brand: <b>{brand}</b>
+                        </p>
+                        <p className="m-0">
+                            <i className="fas fa-clock text-purple"></i> {year}
+                        </p>
+                    </div>
                     <div className="d-flex justify-content-between align-items-center">
                         <small className="m-0 text-secondary">
                             {ownerShipSerial} Ownership
                         </small>
                         <p className="h5 m-0 text-purple">${price}</p>
                     </div>
-                    {/* <Link to={`/book-service/${_id}`}>
-                        <button className="rounded-pill px-3 py-1 mt-1 btn-outline-purple">
+                    <Link to={`/book-product/${_id}`}>
+                        <button className="rounded-pill px-3 py-1 mt-2 btn-outline-purple btn">
                             Book
                         </button>
-                    </Link> */}
+                    </Link>
                 </div>
             </div>
         </div>
