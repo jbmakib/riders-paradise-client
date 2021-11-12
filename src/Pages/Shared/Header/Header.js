@@ -19,6 +19,7 @@ const Header = () => {
                     <NavItem href="/">Home</NavItem>
                     {user.accessToken ? (
                         <>
+                            <NavItem href="/explore">Explore</NavItem>
                             <NavItem href="/dashboard">Dashboard</NavItem>
                             <li>
                                 <span className="fw-bold">
