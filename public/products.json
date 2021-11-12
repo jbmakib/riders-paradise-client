@@ -5,22 +5,22 @@
         "kilometers": 7468,
         "ownerShipSerial": "1st",
         "price": 1412.45,
-        "img": "https://fastly-production.24c.in/inspection-bike/appointments/spincar/prod/IN/IN_BIKE_1007195669/POST_REFURB/1632033471478/cu-0.jpg",
+        "img": "https://fastly-production.24c.in/inspection-bike/appointments/spincar/prod/IN/IN_BIKE_1007195669/POST_REFURB/1632033471478/cu-0.jpg?w=350&h=auto&auto=format",
         "ratings": {
             "rate": 4.5,
             "raters": 25
         }
     },
     {
-        "name": "TVS Apache RTR 160",
+        "name": "TVS Apache RTR 200 4v",
         "brand": "TVS",
-        "kilometers": 7468,
-        "ownerShipSerial": "1st",
-        "price": 1412.45,
-        "img": "https://fastly-production.24c.in/inspection-bike/appointments/spincar/prod/IN/IN_BIKE_1007195669/POST_REFURB/1632033471478/cu-0.jpg",
+        "kilometers": 21674,
+        "ownerShipSerial": "2nd",
+        "price": 995.44,
+        "img": "https://fastly-production.24c.in/inspection-bike/appointments/spincar/prod/IN/IN_BIKE_3089549885/POST_REFURB/1633251676925/cu-0.jpg?w=350&h=auto&auto=format",
         "ratings": {
-            "rate": 3.5,
-            "raters": 25
+            "rate": 4.2,
+            "raters": 16
         }
     },
     {
