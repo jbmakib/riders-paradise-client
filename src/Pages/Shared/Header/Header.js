@@ -12,7 +12,11 @@ const Header = () => {
         <nav className="navbar header navbar-expand-lg navbar-light sticky-top bg-white">
             <div className="container">
                 <NavLink className="navbar-brand" to="/">
-                    <h1 className="m-0">Paradise</h1>
+                    <h1 className="m-0">
+                        <i className="fas fa-motorcycle text-purple"></i>{" "}
+                        Paradise
+                        <span className="text-purple">.</span>
+                    </h1>
                 </NavLink>
                 <NavbarToggler />
                 <MainNavbar>

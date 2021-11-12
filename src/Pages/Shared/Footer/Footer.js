@@ -7,14 +7,14 @@ const Footer = () => {
             <div className="container py-3">
                 <div className="row">
                     <div className="col-lg-3 my-lg-0 my-3">
-                        <img
-                            src="https://jbmakib.github.io/travel-site-bootstrap/images/logo.png"
-                            alt=""
-                            width="150px"
-                        />
+                        <h1 className="m-0">
+                            <i className="fas fa-motorcycle text-purple"></i>{" "}
+                            Paradise
+                            <span className="text-purple">.</span>
+                        </h1>
                         <br />
                         <small>
-                            Book your trip in minute, get full Control for much
+                            Get your bike in hours, get full Control for much
                             longer
                         </small>
                     </div>

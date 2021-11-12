@@ -13,7 +13,10 @@ const DashboardNav = ({ url }) => {
                 to="/"
                 className="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none"
             >
-                <span className="fs-4">Sidebar</span>
+                <h2 className="m-0">
+                    <i className="fas fa-motorcycle text-purple"></i> Paradise
+                    <span className="text-purple">.</span>
+                </h2>
             </NavLink>
             <hr />
             <ul className="nav nav-pills flex-column mb-auto">
