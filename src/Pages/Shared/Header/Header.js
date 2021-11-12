@@ -17,9 +17,9 @@ const Header = () => {
                 <NavbarToggler />
                 <MainNavbar>
                     <NavItem href="/">Home</NavItem>
+                    <NavItem href="/explore">Explore</NavItem>
                     {user.accessToken ? (
                         <>
-                            <NavItem href="/explore">Explore</NavItem>
                             <NavItem href="/dashboard">Dashboard</NavItem>
                             <li>
                                 <span className="fw-bold">
