@@ -24,7 +24,7 @@ const DashboardNav = ({ url }) => {
                 <DashboardNavItem href="/dashboard">Dashboard</DashboardNavItem>
                 {isAdmin ? (
                     <>
-                        <DashboardNavItem href={`${url}/manageAllOrder`}>
+                        <DashboardNavItem href={`${url}/manageAllOrders`}>
                             Manage All Orders
                         </DashboardNavItem>
                         <DashboardNavItem href={`${url}/addProduct`}>
