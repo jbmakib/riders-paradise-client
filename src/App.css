@@ -17,7 +17,7 @@
     border-color: var(--purple) !important;
 }
 .btn-purple:hover {
-    color: rgb(167, 148, 148) !important;
+    color: #fff !important;
     background-color: var(--dark-purple) !important;
     border-color: var(--black-purple) !important;
 }
