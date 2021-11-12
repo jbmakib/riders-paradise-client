@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useHistory, useLocation } from "react-router-dom";
 import useAuth from "../../../hooks/useAuth";
 import loginImage from "../../../images/login-image.png";
@@ -6,10 +6,11 @@ import loginImage from "../../../images/login-image.png";
 const Login = () => {
     const [loginInfo, setLoginInfo] = useState({});
 
-    const { error, loginUser, setError, isLoading } = useAuth();
+    const { error, loginUser, setError, isLoading, user } = useAuth();
 
     const history = useHistory();
     const location = useLocation();
+    const redirect_uri = location.state?.from || "/";
 
     const handleOnInput = (e) => {
         const field = e.target.name;
@@ -23,6 +24,11 @@ const Login = () => {
         e.preventDefault();
         loginUser(loginInfo.email, loginInfo.password, location, history);
     };
+
+    useEffect(() => {
+        user.accessToken && history.push(redirect_uri);
+    }, [user, history, redirect_uri]);
+
     return (
         <div className="container">
             <div className="row gx-3 align-items-center">
