@@ -21,8 +21,6 @@ const BookProduct = () => {
         order.product = product;
         order.dateIssued = issued;
 
-        console.log(order);
-
         // send data to server
         axios
             .post("http://localhost:5000/orders", order)
