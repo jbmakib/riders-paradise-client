@@ -4,6 +4,8 @@
     --black-purple: #7d4586;
     --light-purple: #a768b1;
 }
+
+/* purple color text */
 .text-purple {
     color: var(--purple) !important;
 }
@@ -34,4 +36,16 @@
 .bg-purple {
     color: #fff !important;
     background-color: var(--light-purple) !important;
+}
+
+/* purple color border */
+.border-purple {
+    border-color: var(--light-purple) !important;
+}
+
+a {
+    color: var(--light-purple);
+}
+a:hover {
+    color: var(--black-purple);
 }

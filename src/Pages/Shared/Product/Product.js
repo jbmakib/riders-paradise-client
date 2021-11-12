@@ -18,7 +18,7 @@ const Product = ({
         <div className="col">
             <div className="h-100 rounded-4 overflow-hidden card">
                 <img
-                    className="card-img-top border-bottom border-4 border-primary"
+                    className="card-img-top border-bottom border-4 border-purple"
                     src={img}
                     alt={name}
                 />
