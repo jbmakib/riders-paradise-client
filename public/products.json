@@ -24,27 +24,27 @@
         }
     },
     {
-        "name": "TVS Apache RTR 160",
-        "brand": "TVS",
-        "kilometers": 7468,
+        "name": "KTM Duke 200",
+        "brand": "KTM",
+        "kilometers": 18937,
         "ownerShipSerial": "1st",
-        "price": 1412.45,
-        "img": "https://fastly-production.24c.in/inspection-bike/appointments/spincar/prod/IN/IN_BIKE_1007195669/POST_REFURB/1632033471478/cu-0.jpg",
+        "price": 1532.45,
+        "img": "https://fastly-production.24c.in/inspection-bike/appointments/spincar/prod/IN/IN_BIKE_1125607263/POST_REFURB/1628567311722/cu-0.jpg?w=260&h=188&auto=format",
         "ratings": {
-            "rate": 4.5,
-            "raters": 25
+            "rate": 3.2,
+            "raters": 18
         }
     },
     {
-        "name": "TVS Apache RTR 160",
-        "brand": "TVS",
-        "kilometers": 7468,
-        "ownerShipSerial": "1st",
-        "price": 1412.45,
-        "img": "https://fastly-production.24c.in/inspection-bike/appointments/spincar/prod/IN/IN_BIKE_1007195669/POST_REFURB/1632033471478/cu-0.jpg",
+        "name": "Hero HF Delux",
+        "brand": "Hero",
+        "kilometers": 31412,
+        "ownerShipSerial": ">=3rd",
+        "price": 400,
+        "img": "https://fastly-production.24c.in/inspection-bike/appointments/spincar/prod/IN/IN_BIKE_4098952287/POST_REFURB/1633691165126/cu-0.jpg?w=260&h=188&auto=format",
         "ratings": {
-            "rate": 4.5,
-            "raters": 25
+            "rate": 4.9,
+            "raters": 11
         }
     },
     {
