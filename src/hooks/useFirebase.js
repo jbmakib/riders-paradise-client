@@ -67,7 +67,6 @@ const useFirebase = () => {
     // observer user state
     useEffect(() => {
         const unsubscribed = onAuthStateChanged(auth, (user) => {
-            setIsLoading(true);
             if (user) {
                 setUser(user);
             } else {
@@ -80,7 +79,6 @@ const useFirebase = () => {
     }, []);
 
     useEffect(() => {
-        setIsLoading(true);
         setIsAdmin(false);
         fetch(
             `https://enigmatic-refuge-60972.herokuapp.com/users/${user.email}`
@@ -91,8 +89,7 @@ const useFirebase = () => {
                     setIsAdmin(true);
                 }
             })
-            .catch((err) => {})
-            .finally(() => setIsLoading(false));
+            .catch((err) => {});
     }, [user.email]);
 
     const logOut = () => {
