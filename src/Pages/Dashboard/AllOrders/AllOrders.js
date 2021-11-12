@@ -7,7 +7,9 @@ const AllOrders = () => {
     const [allOrders, setAllOrders] = useState([]);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/orders/${user.email}`)
+        fetch(
+            `https://enigmatic-refuge-60972.herokuapp.com/orders/admin/${user.email}`
+        )
             .then((res) => res.json())
             .then((data) => setAllOrders(data))
             .catch((err) => console.log(err.message));

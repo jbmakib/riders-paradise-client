@@ -23,7 +23,7 @@ const BookProduct = () => {
 
         // send data to server
         axios
-            .post("http://localhost:5000/orders", order)
+            .post("https://enigmatic-refuge-60972.herokuapp.com/orders", order)
             .then((res) => {
                 if (res.data.insertedId) {
                     alert("order added successfully\nWait for approve");
