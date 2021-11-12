@@ -34,7 +34,7 @@ const Footer = () => {
                         <p className="fw-bold">Discover Our App</p>
                         <div className="d-flex justify-content-between">
                             <a
-                                className="btn btn-outline-orange"
+                                className="btn btn-outline-primary"
                                 href="https://play.google.com/"
                                 target="_blank"
                                 rel="noreferrer"
@@ -42,7 +42,7 @@ const Footer = () => {
                                 Google Play
                             </a>
                             <a
-                                className="btn btn-outline-orange"
+                                className="btn btn-outline-primary"
                                 href="https://www.apple.com/app-store/"
                                 target="_blank"
                                 rel="noreferrer"
