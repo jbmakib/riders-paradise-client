@@ -9,7 +9,8 @@
         "ratings": {
             "rate": 4.5,
             "raters": 25
-        }
+        },
+        "year": 2020
     },
     {
         "name": "TVS Apache RTR 200 4v",
@@ -21,7 +22,8 @@
         "ratings": {
             "rate": 4.2,
             "raters": 16
-        }
+        },
+        "year": 2018
     },
     {
         "name": "KTM Duke 200",
@@ -33,7 +35,8 @@
         "ratings": {
             "rate": 3.2,
             "raters": 18
-        }
+        },
+        "year": 2018
     },
     {
         "name": "Hero HF Delux",
@@ -45,7 +48,8 @@
         "ratings": {
             "rate": 4.9,
             "raters": 11
-        }
+        },
+        "year": 2018
     },
     {
         "name": "Bajaj Avenger Cruise 220",
@@ -57,7 +61,8 @@
         "ratings": {
             "rate": 3.2,
             "raters": 86
-        }
+        },
+        "year": 2016
     },
     {
         "name": "Aprilia Storm 125",
@@ -69,7 +74,8 @@
         "ratings": {
             "rate": 4.2,
             "raters": 19
-        }
+        },
+        "year": 2019
     },
     {
         "name": "TVS Apache RTR 160",
@@ -81,7 +87,8 @@
         "ratings": {
             "rate": 4.5,
             "raters": 25
-        }
+        },
+        "year": 2018
     },
     {
         "name": "TVS Apache RTR 160",
@@ -93,7 +100,8 @@
         "ratings": {
             "rate": 4.5,
             "raters": 25
-        }
+        },
+        "year": 2018
     },
     {
         "name": "TVS Apache RTR 160",
@@ -105,7 +113,8 @@
         "ratings": {
             "rate": 4.5,
             "raters": 25
-        }
+        },
+        "year": 2018
     },
     {
         "name": "TVS Apache RTR 160",
@@ -117,7 +126,8 @@
         "ratings": {
             "rate": 4.5,
             "raters": 25
-        }
+        },
+        "year": 2018
     },
     {
         "name": "TVS Apache RTR 160",
@@ -129,7 +139,8 @@
         "ratings": {
             "rate": 4.5,
             "raters": 25
-        }
+        },
+        "year": 2018
     },
     {
         "name": "TVS Apache RTR 160",
@@ -141,6 +152,7 @@
         "ratings": {
             "rate": 4.5,
             "raters": 25
-        }
+        },
+        "year": 2018
     }
 ]
