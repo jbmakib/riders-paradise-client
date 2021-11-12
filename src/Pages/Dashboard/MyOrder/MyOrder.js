@@ -1,4 +1,5 @@
 import React from "react";
+import deleteOrder from "../../../utilities/deleteOrder";
 
 const MyOrder = ({
     order: {
@@ -9,6 +10,10 @@ const MyOrder = ({
     },
     action: { myOrders, setMyOrders },
 }) => {
+    // delete order
+    const handleDeleteOrder = () => {
+        deleteOrder(_id, myOrders, setMyOrders);
+    };
     return (
         <tr>
             <td>{name}</td>
@@ -17,7 +22,7 @@ const MyOrder = ({
             <td>
                 <button
                     className="btn btn-outline-purple"
-                    // onClick={handleDeleteOrder}
+                    onClick={handleDeleteOrder}
                 >
                     Delete
                 </button>
