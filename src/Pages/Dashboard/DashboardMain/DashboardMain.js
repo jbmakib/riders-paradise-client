@@ -9,7 +9,7 @@ const DashboardMain = () => {
                 <h1>Dashboard</h1>
                 <h3>
                     Welcome{" "}
-                    <span className="text-primary">{user.displayName}</span>
+                    <span className="text-purple">{user.displayName}</span>
                 </h3>
                 <h4>Your role is: {isAdmin ? "admin" : "user"}</h4>
             </div>

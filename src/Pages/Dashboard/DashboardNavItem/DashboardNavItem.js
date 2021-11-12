@@ -7,7 +7,7 @@ const DashboardNavItem = ({ children, href }) => {
             <NavLink
                 to={href}
                 className="nav-link link-dark"
-                activeClassName="active"
+                activeClassName="bg-purple"
                 exact
             >
                 {children}

@@ -32,7 +32,7 @@ const MakeAdmin = () => {
 
     return (
         <div className="text-center py-3">
-            <h2 className="text-primary">Make a user an admin</h2>
+            <h2 className="text-purple">Make a user an admin</h2>
             <form
                 className="row g-3 w-75 mx-auto align-items-center"
                 onSubmit={handleMakeAdmin}
@@ -51,7 +51,7 @@ const MakeAdmin = () => {
                     />
                 </div>
                 <div className="col-12 col-md-4">
-                    <button type="submit" className="btn btn-primary">
+                    <button type="submit" className="btn btn-purple">
                         Make admin
                     </button>
                 </div>

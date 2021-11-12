@@ -40,10 +40,10 @@ const Register = () => {
         <div className="container">
             <div className="row gx-3 align-items-center">
                 <div className="col-12 col-lg-6 text-center">
-                    <h1 className="text-primary">Register</h1>
+                    <h1 className="text-purple">Register</h1>
                     {isLoading ? (
                         <div
-                            className="spinner-border text-primary"
+                            className="spinner-border text-purple"
                             role="status"
                         >
                             <span className="visually-hidden">Loading...</span>
@@ -111,7 +111,7 @@ const Register = () => {
                                 </div>
                                 <button
                                     type="submit"
-                                    className="btn btn-primary my-3"
+                                    className="btn btn-purple my-3"
                                 >
                                     Register
                                 </button>

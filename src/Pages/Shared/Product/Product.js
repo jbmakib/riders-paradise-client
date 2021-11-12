@@ -31,7 +31,7 @@ const Product = ({
                             </span>
                         </div>
                         <div>
-                            <i className="fas fa-tachometer-alt text-primary"></i>
+                            <i className="fas fa-tachometer-alt text-purple"></i>
                             <span className="text-muted ps-1">
                                 {kilometers} km
                             </span>
@@ -42,10 +42,10 @@ const Product = ({
                         <small className="m-0 text-secondary">
                             {ownerShipSerial} Ownership
                         </small>
-                        <p className="h5 m-0 text-primary">${price}</p>
+                        <p className="h5 m-0 text-purple">${price}</p>
                     </div>
                     {/* <Link to={`/book-service/${_id}`}>
-                        <button className="rounded-pill px-3 py-1 mt-1 btn-outline-primary">
+                        <button className="rounded-pill px-3 py-1 mt-1 btn-outline-purple">
                             Book
                         </button>
                     </Link> */}

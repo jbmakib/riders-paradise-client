@@ -11,7 +11,7 @@ const Products = () => {
             {products.length === 0 ? (
                 <div className="text-center">
                     <div
-                        className="spinner-border text-primary"
+                        className="spinner-border text-purple"
                         role="status"
                     ></div>
                 </div>
