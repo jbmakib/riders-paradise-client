@@ -1,17 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
+import useProducts from "../../../hooks/useProducts";
 import Product from "../../Shared/Product/Product";
 
 const Products = () => {
-    const [products, setProducts] = useState([]);
+    const { products } = useProducts();
 
-    useEffect(() => {
-        fetch("/products.json")
-            .then((res) => res.json())
-            .then((data) => setProducts(data.slice(0, 6)));
-    }, []);
     return (
         <div className="container">
-            <h2>This is products {products.length}</h2>
+            <h2 className="text-center">Our Best Products</h2>
             {products.length === 0 ? (
                 <div className="text-center">
                     <div
@@ -21,7 +17,7 @@ const Products = () => {
                 </div>
             ) : (
                 <div className="g-4 row row-cols-lg-3 row-cols-md-2 row-cols-1">
-                    {products.map((product, index) => (
+                    {products.slice(0, 6).map((product, index) => (
                         <Product key={index} product={product} />
                     ))}
                 </div>

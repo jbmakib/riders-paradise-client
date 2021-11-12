@@ -1,13 +1,31 @@
 import React from "react";
+import useProducts from "../../../hooks/useProducts";
 import Footer from "../../Shared/Footer/Footer";
 import Header from "../../Shared/Header/Header";
+import Product from "../../Shared/Product/Product";
 
 const Explore = () => {
+    const { products } = useProducts();
+
     return (
         <div>
             <Header />
             <div className="container">
                 <h2>Explore Our Products</h2>
+                {products.length === 0 ? (
+                    <div className="text-center">
+                        <div
+                            className="spinner-border text-primary"
+                            role="status"
+                        ></div>
+                    </div>
+                ) : (
+                    <div className="g-4 row row-cols-lg-3 row-cols-md-2 row-cols-1">
+                        {products.map((product, index) => (
+                            <Product key={index} product={product} />
+                        ))}
+                    </div>
+                )}
             </div>
             <Footer />
         </div>
