@@ -16,7 +16,7 @@ const MyOrder = ({
             <td>{status}</td>
             <td>
                 <button
-                    className="btn btn-outline-danger"
+                    className="btn btn-outline-purple"
                     // onClick={handleDeleteOrder}
                 >
                     Delete

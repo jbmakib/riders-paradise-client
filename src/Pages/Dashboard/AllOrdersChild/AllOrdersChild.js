@@ -1,10 +1,39 @@
 import React from "react";
 
-const AllOrdersChild = () => {
+const AllOrdersChild = ({
+    action: { allOrders, setAllOrders },
+    order: {
+        _id,
+        name,
+        getDelivered,
+        dateIssued,
+        status,
+        product: { name: productName },
+    },
+}) => {
     return (
-        <div>
-            <h2>This is single admin order</h2>
-        </div>
+        <tr>
+            <td>{name}</td>
+            <td>{productName}</td>
+            <td>{dateIssued}</td>
+            <td>{getDelivered}</td>
+            <td>{status}</td>
+            <td>
+                <select defaultValue={status} /* onChange={handleChange} */>
+                    <option value="Decline">Decline</option>
+                    <option value="Pending">Pending</option>
+                    <option value="Approve">Approve</option>
+                </select>
+            </td>
+            <td>
+                <button
+                    className="btn btn-outline-purple"
+                    // onClick={handleDeleteOrder}
+                >
+                    Delete
+                </button>
+            </td>
+        </tr>
     );
 };
 
