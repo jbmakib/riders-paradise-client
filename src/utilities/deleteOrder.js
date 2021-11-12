@@ -2,7 +2,7 @@
 const deleteOrder = (id, state, setState) => {
     const proceed = window.confirm("Are you sure, you want to delete?");
     if (proceed) {
-        fetch(`http://localhost:5000/orders/${id}`, {
+        fetch(`https://enigmatic-refuge-60972.herokuapp.com/orders/${id}`, {
             method: "DELETE",
         })
             .then((res) => res.json())
