@@ -42,15 +42,6 @@ const Header = () => {
                         </>
                     ) : (
                         <>
-                            {/* <NavHashLink href="/home#services">
-                                    Services
-                                </NavHashLink>
-                                <NavHashLink href="/home#reviews">
-                                    Reviews
-                                </NavHashLink>
-                                <NavHashLink href="/home#about-us">
-                                    About Us
-                                </NavHashLink> */}
                             <NavItem href="/login">Login</NavItem>
                         </>
                     )}

@@ -1,4 +1,6 @@
+import axios from "axios";
 import React from "react";
+import { useForm } from "react-hook-form";
 import useAuth from "../../../hooks/useAuth";
 import Footer from "../../Shared/Footer/Footer";
 import Header from "../../Shared/Header/Header";
@@ -6,6 +8,23 @@ import ContactAction from "../ContactAction/ContactAction";
 
 const Contact = () => {
     const { user } = useAuth();
+    const { register, handleSubmit, reset } = useForm();
+    const onSubmit = (data) => {
+        const sendDate = new Date().toISOString().split("T")[0];
+        const userMessage = data;
+        userMessage.sendDate = sendDate;
+
+        // send data to server
+        axios
+            .post("http://localhost:5000/messages", userMessage)
+            .then((res) => {
+                if (res.data.insertedId) {
+                    alert("Message sent successfully");
+                    reset();
+                }
+            })
+            .catch((err) => console.log(err.message));
+    };
     return (
         <div>
             <Header />
@@ -53,7 +72,7 @@ const Contact = () => {
                     </div>
                     <div className="col">
                         <h5 className="fw-bold">Message Us</h5>
-                        <form>
+                        <form onSubmit={handleSubmit(onSubmit)}>
                             <div className="my-2 row row-cols-md-2 row-cols-1">
                                 <div className="form-floating col">
                                     <input
@@ -64,6 +83,9 @@ const Contact = () => {
                                         required
                                         defaultValue={user.displayName}
                                         readOnly
+                                        {...register("name", {
+                                            required: true,
+                                        })}
                                     />
                                     <label
                                         htmlFor="floatingName"
@@ -81,6 +103,9 @@ const Contact = () => {
                                         required
                                         defaultValue={user.email}
                                         readOnly
+                                        {...register("email", {
+                                            required: true,
+                                        })}
                                     />
                                     <label
                                         htmlFor="floatingEmail"
@@ -97,6 +122,7 @@ const Contact = () => {
                                     id="floatingSub"
                                     placeholder="Subject"
                                     required
+                                    {...register("subject", { required: true })}
                                 />
                                 <label htmlFor="floatingSub">Subject</label>
                             </div>
@@ -107,6 +133,7 @@ const Contact = () => {
                                     id="floatingTextarea2"
                                     required
                                     style={{ height: "140px" }}
+                                    {...register("message", { required: true })}
                                 ></textarea>
                                 <label htmlFor="floatingTextarea2">
                                     Message...
