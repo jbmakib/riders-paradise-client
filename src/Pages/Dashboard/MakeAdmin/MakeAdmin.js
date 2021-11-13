@@ -21,6 +21,7 @@ const MakeAdmin = () => {
             .then((res) => {
                 if (res.data.modifiedCount) {
                     setSuccess(true);
+                    e.target.reset();
                 } else {
                     setError(
                         "Error: make sure this mail have an account or this mail is already an admin"
