@@ -26,8 +26,8 @@ const Footer = () => {
                         <HashLink to="/home#products">
                             <p>Best Products</p>
                         </HashLink>
-                        <HashLink to="/home#contact">
-                            <p>Contact Us</p>
+                        <HashLink to="/home#reviews">
+                            <p>Reviews</p>
                         </HashLink>
                     </div>
                     <div className="col-lg-3 my-lg-0 my-3">
