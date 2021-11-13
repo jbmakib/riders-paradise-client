@@ -11,23 +11,26 @@ const OurStory = () => {
                         Inspired By Passionate Bikers
                     </p>
                     <p>
-                        “Travel is the main thing you purchase that makes you
-                        more extravagant”. We, at ‘Jadoo Travel’, swear by this
-                        and put stock in satisfying travel dreams that make you
-                        perpetually rich constantly.
+                        "RIDERS PARADISE" is a next-gen e-commerce platform
+                        revolutionizing the way India buys and sells pre-owned
+                        bikes. We take great pride in providing the best
+                        experience to all parties involved - with sellers
+                        getting the best value for their bikes and buyers
+                        getting to choose from a wide assortment of
+                        two-wheelers.
                     </p>
                     <p>
-                        We have been moving excellent encounters for a
-                        considerable length of time through our cutting-edge
-                        planned occasion bundles and other fundamental travel
-                        administrations. We rouse our clients to carry on with a
-                        rich life, brimming with extraordinary travel
-                        encounters.
+                        "RIDERS PARADISE" brings you one of its kind pre-owned
+                        bike buying experience - Take a 7 Day Trial of our
+                        bikes; if you don't like it, return it and get a 100%
+                        refund. Plus all our bikes are refurbished by experts to
+                        offer you a ride as good as new and also, comes with a
+                        free 1-year comprehensive warranty
                     </p>
                 </div>
                 <div className="col">
                     <img
-                        src="https://themegoods-cdn-pzbycso8wng.stackpathdns.com/grandtour/demo2/wp-content/uploads/2017/07/pexels-photo-479344.jpeg"
+                        src="https://www.bikes24.com/bikes/static/assets/thumbnail3.093455ee.jpg"
                         alt="story"
                         className="w-100 story-image"
                     />
