@@ -1,7 +1,7 @@
 import React from "react";
 import ReactStars from "react-rating-stars-component";
 
-const Review = ({
+const HomeReview = ({
     review: { name, title, description, designation, company, email, ratings },
 }) => {
     const reactStartsInfo = {
@@ -36,4 +36,4 @@ const Review = ({
     );
 };
 
-export default Review;
+export default HomeReview;

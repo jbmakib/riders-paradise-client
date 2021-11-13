@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import Review from "../Review/Review";
+import HomeReview from "../HomeReview/HomeReview";
 
-const Reviews = () => {
+const HomeReviews = () => {
     const [reviews, setReviews] = useState([]);
     useEffect(() => {
         fetch("/reviews.json")
@@ -23,7 +23,7 @@ const Reviews = () => {
             ) : (
                 <div className="g-4 row row-cols-lg-4 row-cols-md-2 row-cols-1">
                     {reviews.map((review, index) => (
-                        <Review key={index} review={review} />
+                        <HomeReview key={index} review={review} />
                     ))}
                 </div>
             )}
@@ -31,4 +31,4 @@ const Reviews = () => {
     );
 };
 
-export default Reviews;
+export default HomeReviews;
