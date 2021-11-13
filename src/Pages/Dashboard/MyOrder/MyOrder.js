@@ -1,5 +1,5 @@
 import React from "react";
-import deleteOrder from "../../../utilities/deleteOrder";
+import deleteFromDB from "../../../utilities/deleteFromDB";
 
 const MyOrder = ({
     order: {
@@ -12,7 +12,7 @@ const MyOrder = ({
 }) => {
     // delete order
     const handleDeleteOrder = () => {
-        deleteOrder(_id, myOrders, setMyOrders);
+        deleteFromDB(_id, myOrders, setMyOrders, "/orders");
     };
     return (
         <tr>

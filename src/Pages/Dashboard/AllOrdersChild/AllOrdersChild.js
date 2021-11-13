@@ -1,6 +1,6 @@
 import axios from "axios";
 import React from "react";
-import deleteOrder from "../../../utilities/deleteOrder";
+import deleteFromDB from "../../../utilities/deleteFromDB";
 
 const AllOrdersChild = ({
     action: { allOrders, setAllOrders },
@@ -30,7 +30,7 @@ const AllOrdersChild = ({
 
     // delete order
     const handleDeleteOrder = () => {
-        deleteOrder(_id, allOrders, setAllOrders);
+        deleteFromDB(_id, allOrders, setAllOrders, "/orders");
     };
 
     return (

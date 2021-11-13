@@ -1,8 +1,8 @@
-// deleteOrder function deletes the order from database
-const deleteOrder = (id, state, setState) => {
+// deleteFromDB function deletes the order from database
+const deleteFromDB = (id, state, setState, url) => {
     const proceed = window.confirm("Are you sure, you want to delete?");
     if (proceed) {
-        fetch(`https://enigmatic-refuge-60972.herokuapp.com/orders/${id}`, {
+        fetch(`http://localhost:5000${url}/${id}`, {
             method: "DELETE",
         })
             .then((res) => res.json())
@@ -18,4 +18,4 @@ const deleteOrder = (id, state, setState) => {
     }
 };
 
-export default deleteOrder;
+export default deleteFromDB;
