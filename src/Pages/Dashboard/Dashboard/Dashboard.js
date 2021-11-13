@@ -9,6 +9,7 @@ import Pay from "../Pay/Pay";
 import Review from "../Review/Review";
 import MyOrders from "../MyOrders/MyOrders";
 import AllOrders from "../AllOrders/AllOrders";
+import Messages from "../Messages/Messages";
 
 const Dashboard = () => {
     const { path, url } = useRouteMatch();
@@ -40,6 +41,9 @@ const Dashboard = () => {
                     </AdminRoute>
                     <AdminRoute path={`${path}/manageAllOrders`}>
                         <AllOrders />
+                    </AdminRoute>
+                    <AdminRoute path={`${path}/messages`}>
+                        <Messages />
                     </AdminRoute>
 
                     {/* default route */}

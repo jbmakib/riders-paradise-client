@@ -36,6 +36,9 @@ const DashboardNav = ({ url }) => {
                         <DashboardNavItem href={`${url}/manageProducts`}>
                             Manage Products
                         </DashboardNavItem>
+                        <DashboardNavItem href={`${url}/messages`}>
+                            Messages
+                        </DashboardNavItem>
                     </>
                 ) : (
                     <>
