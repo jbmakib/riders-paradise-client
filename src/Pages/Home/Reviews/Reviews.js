@@ -10,7 +10,7 @@ const Reviews = () => {
     }, []);
 
     return (
-        <div className="container my-3">
+        <div className="container my-3" id="reviews">
             <h2 className="text-center">Reviews {reviews.length}</h2>
         </div>
     );
