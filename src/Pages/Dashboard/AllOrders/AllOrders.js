@@ -17,7 +17,7 @@ const AllOrders = () => {
     }, []);
     return (
         <div className="container my-3">
-            <h2 className="text-center">
+            <h2 className="text-center text-purple">
                 All of the orders: {allOrders.length}
             </h2>
             <div className="table-responsive">

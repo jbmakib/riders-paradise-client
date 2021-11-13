@@ -15,7 +15,7 @@ const Messages = () => {
     }, []);
     return (
         <div className="container my-3">
-            <h2 className="text-center">
+            <h2 className="text-center text-purple">
                 All of the messages: {allMessages.length}
             </h2>
             <div className="table-responsive">
