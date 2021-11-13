@@ -132,6 +132,26 @@ const BookProduct = () => {
                     </div>
                     <div className="form-floating mb-3">
                         <input
+                            className="form-control"
+                            id="floatingAddress"
+                            placeholder="Address"
+                            {...register("address", { required: true })}
+                        />
+                        <label htmlFor="floatingAddress">Address</label>
+                    </div>
+                    <div className="form-floating mb-3">
+                        <input
+                            className="form-control"
+                            id="floatingPhoneNumber"
+                            placeholder="Phone Number"
+                            {...register("phoneNumber", { required: true })}
+                        />
+                        <label htmlFor="floatingPhoneNumber">
+                            Phone Number
+                        </label>
+                    </div>
+                    <div className="form-floating mb-3">
+                        <input
                             type="date"
                             className="form-control"
                             id="floatingSelectTimeForDelivery"

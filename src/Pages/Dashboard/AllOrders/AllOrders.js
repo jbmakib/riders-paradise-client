@@ -26,6 +26,7 @@ const AllOrders = () => {
                         <tr>
                             <th scope="col">User Name</th>
                             <th scope="col">Bike Name</th>
+                            <th scope="col">Phone Number</th>
                             <th scope="col">Date Issued</th>
                             <th scope="col">Delivery Date</th>
                             <th scope="col">Status</th>

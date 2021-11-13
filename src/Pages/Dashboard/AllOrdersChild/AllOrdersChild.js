@@ -10,6 +10,7 @@ const AllOrdersChild = ({
         getDelivered,
         dateIssued,
         status,
+        phoneNumber,
         product: { name: productName },
     },
 }) => {
@@ -36,6 +37,7 @@ const AllOrdersChild = ({
         <tr>
             <td>{name}</td>
             <td>{productName}</td>
+            <td>{phoneNumber}</td>
             <td>{dateIssued}</td>
             <td>{getDelivered}</td>
             <td>{status}</td>
