@@ -4,7 +4,7 @@ import HomeReview from "../HomeReview/HomeReview";
 const HomeReviews = () => {
     const [reviews, setReviews] = useState([]);
     useEffect(() => {
-        fetch("http://localhost:5000/reviews")
+        fetch("https://enigmatic-refuge-60972.herokuapp.com/reviews")
             .then((res) => res.json())
             .then((data) => setReviews(data))
             .catch((err) => console.log(err.message));

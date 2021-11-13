@@ -30,10 +30,13 @@ const Review = () => {
         review.name = user.displayName;
         review.email = user.email;
         review.ratings = star;
-        console.log(review);
 
+        // send data to server
         axios
-            .post("http://localhost:5000/reviews", review)
+            .post(
+                "https://enigmatic-refuge-60972.herokuapp.com/reviews",
+                review
+            )
             .then((res) => {
                 if (res.data.insertedId) {
                     alert("Review added successfully\nCheck Home");
