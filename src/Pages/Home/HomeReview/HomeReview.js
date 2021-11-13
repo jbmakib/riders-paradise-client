@@ -2,7 +2,7 @@ import React from "react";
 import ReactStars from "react-rating-stars-component";
 
 const HomeReview = ({
-    review: { name, title, description, designation, company, email, ratings },
+    review: { name, title, description, designation, company, ratings },
 }) => {
     const reactStartsInfo = {
         value: ratings,
@@ -29,7 +29,6 @@ const HomeReview = ({
                     <small className="d-block">
                         {designation} at {company}
                     </small>
-                    <small className="d-block">{email}</small>
                 </div>
             </div>
         </div>

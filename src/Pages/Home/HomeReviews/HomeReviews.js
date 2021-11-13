@@ -4,7 +4,7 @@ import HomeReview from "../HomeReview/HomeReview";
 const HomeReviews = () => {
     const [reviews, setReviews] = useState([]);
     useEffect(() => {
-        fetch("/reviews.json")
+        fetch("http://localhost:5000/reviews")
             .then((res) => res.json())
             .then((data) => setReviews(data))
             .catch((err) => console.log(err.message));
@@ -22,8 +22,8 @@ const HomeReviews = () => {
                 </div>
             ) : (
                 <div className="g-4 row row-cols-lg-4 row-cols-md-2 row-cols-1">
-                    {reviews.map((review, index) => (
-                        <HomeReview key={index} review={review} />
+                    {reviews.map((review) => (
+                        <HomeReview key={review._id} review={review} />
                     ))}
                 </div>
             )}
