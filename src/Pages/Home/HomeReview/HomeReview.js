@@ -15,7 +15,7 @@ const HomeReview = ({
 
     return (
         <div className="col">
-            <div className="card">
+            <div className="card h-100">
                 <div className="card-body">
                     <h5 className="card-title">{title}</h5>
                     <div className="d-flex my-2">
