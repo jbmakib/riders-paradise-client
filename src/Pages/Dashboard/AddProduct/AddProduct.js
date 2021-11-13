@@ -174,7 +174,7 @@ const AddProduct = () => {
                     <label htmlFor="floatingPublishYear">Publish Year</label>
                 </div>
                 <button className="btn btn-purple py-2 px-4" type="submit">
-                    Send Message
+                    Add The Product
                 </button>
             </form>
         </div>
