@@ -14,7 +14,8 @@ const deleteFromDB = (id, state, setState, url) => {
                     );
                     setState(remainingItems);
                 }
-            });
+            })
+            .catch((err) => console.log(err.message));
     }
 };
 

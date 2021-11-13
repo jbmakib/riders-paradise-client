@@ -89,7 +89,7 @@ const useFirebase = () => {
                     setIsAdmin(true);
                 }
             })
-            .catch((err) => {});
+            .catch((err) => console.log(err.message));
     }, [user.email]);
 
     const logOut = () => {
