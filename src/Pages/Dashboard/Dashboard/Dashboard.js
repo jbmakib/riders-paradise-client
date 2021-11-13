@@ -19,7 +19,7 @@ const Dashboard = () => {
         <div className="dashboard">
             <DashboardNav url={url} />
             <div className="b-example-divider"></div>
-            <div className="p-3 w-100">
+            <div className="p-3 w-100 overflow-auto">
                 <Switch>
                     <Route exact path={path}>
                         <DashboardMain />
