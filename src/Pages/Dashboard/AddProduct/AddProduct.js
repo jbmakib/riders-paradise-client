@@ -10,6 +10,7 @@ const AddProduct = () => {
         product.ratings.rate = parseFloat(product.ratings.rate);
         product.ratings.raters = parseInt(product.ratings.raters);
         product.year = parseInt(product.year);
+        product.ownerShipSerial = product.ownerShipSerial || "1st";
         console.log(product);
 
         // send data to server
@@ -66,21 +67,46 @@ const AddProduct = () => {
                     />
                     <label htmlFor="floatingKilos">Kilometers</label>
                 </div>
-                {/* <div className="form-floating mb-3">
+                <div className="form-check form-check-inline">
                     <input
-                        type="text"
-                        className="form-control"
-                        id="floatingOwnerShipSerial"
-                        placeholder="ownerShipSerial"
-                        required
-                        {...register("ownerShipSerial", {
-                            required: true,
-                        })}
+                        {...register("ownerShipSerial")}
+                        className="form-check-input"
+                        type="radio"
+                        id="1stOwner"
+                        value="1st"
+                        name="ownerShipSerial"
                     />
-                    <label htmlFor="floatingOwnerShipSerial">
-                        Ownership Serial
+                    <label className="form-check-label" htmlFor="1stOwner">
+                        First
                     </label>
-                </div> */}
+                </div>
+                <div className="form-check form-check-inline">
+                    <input
+                        {...register("ownerShipSerial")}
+                        className="form-check-input"
+                        type="radio"
+                        id="2ndOwner"
+                        value="2nd"
+                        name="ownerShipSerial"
+                    />
+                    <label className="form-check-label" htmlFor="2ndOwner">
+                        Second
+                    </label>
+                </div>
+                <div className="form-check form-check-inline">
+                    <input
+                        {...register("ownerShipSerial")}
+                        className="form-check-input"
+                        type="radio"
+                        id="3rdOrMore"
+                        value=">=3rd"
+                        name="ownerShipSerial"
+                    />
+                    <label className="form-check-label" htmlFor="3rdOrMore">
+                        Third or more
+                    </label>
+                </div>{" "}
+                <small className="text-muted">Default is set to (1st)</small>
                 <div className="form-floating mb-3">
                     <input
                         type="number"
