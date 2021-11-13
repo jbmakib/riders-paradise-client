@@ -1,3 +1,4 @@
+import axios from "axios";
 import React from "react";
 import { useForm } from "react-hook-form";
 
@@ -11,18 +12,17 @@ const AddProduct = () => {
         product.ratings.raters = parseInt(product.ratings.raters);
         product.year = parseInt(product.year);
         product.ownerShipSerial = product.ownerShipSerial || "1st";
-        console.log(product);
 
         // send data to server
-        // axios
-        //     .post("http://localhost:5000/messages", userMessage)
-        //     .then((res) => {
-        //         if (res.data.insertedId) {
-        //             alert("Message sent successfully");
-        //             reset();
-        //         }
-        //     })
-        //     .catch((err) => console.log(err.message));
+        axios
+            .post("http://localhost:5000/products", product)
+            .then((res) => {
+                if (res.data.insertedId) {
+                    alert("Product added successfully");
+                    reset();
+                }
+            })
+            .catch((err) => console.log(err.message));
     };
     return (
         <div className="container">
@@ -110,6 +110,7 @@ const AddProduct = () => {
                 <div className="form-floating mb-3">
                     <input
                         type="number"
+                        step="0.01"
                         className="form-control"
                         id="floatingPrice"
                         placeholder="price"
