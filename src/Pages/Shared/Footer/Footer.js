@@ -1,5 +1,5 @@
 import React from "react";
-// import { HashLink } from "react-router-hash-link";
+import { HashLink } from "react-router-hash-link";
 
 const Footer = () => {
     return (
@@ -20,15 +20,15 @@ const Footer = () => {
                     </div>
                     <div className="col-lg-3 my-lg-0 my-3">
                         <p className="fw-bold">Company</p>
-                        {/* <HashLink to="/home#services" className="footer-link">
-                            <p>Services</p>
+                        <HashLink to="/home">
+                            <p>Home</p>
                         </HashLink>
-                        <HashLink to="/home#reviews" className="footer-link">
-                            <p>Reviews</p>
+                        <HashLink to="/explore">
+                            <p>Explore</p>
                         </HashLink>
-                        <HashLink to="/home#about-us" className="footer-link">
-                            <p>About Us</p>
-                        </HashLink> */}
+                        <HashLink to="/home#contact">
+                            <p>Contact Us</p>
+                        </HashLink>
                     </div>
                     <div className="col-lg-3 my-lg-0 my-3">
                         <p className="fw-bold">Discover Our App</p>

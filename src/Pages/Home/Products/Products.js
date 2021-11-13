@@ -6,7 +6,7 @@ const Products = () => {
     const { products } = useProducts();
 
     return (
-        <div className="container">
+        <div className="container my-3">
             <h2 className="text-center">Our Best Products</h2>
             {products.length === 0 ? (
                 <div className="text-center">
