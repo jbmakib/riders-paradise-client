@@ -83,7 +83,7 @@ const BookProduct = () => {
                 </h5>
                 <p>Can Run: {product.kilometers} kilometers</p>
                 <p>First Release: {product.year}</p>
-                <form onSubmit={handleSubmit(onSubmit)}>
+                <form onSubmit={handleSubmit(onSubmit)} className="w-50">
                     <div className="form-floating mb-3">
                         <input
                             className="form-control"

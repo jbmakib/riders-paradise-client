@@ -10,8 +10,8 @@ const Explore = () => {
     return (
         <div>
             <Header />
-            <div className="container">
-                <h2>Explore Our Products</h2>
+            <div className="container my-3">
+                <h2 className="text-center">Explore Our Products</h2>
                 {products.length === 0 ? (
                     <div className="text-center">
                         <div
