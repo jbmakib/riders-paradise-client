@@ -16,7 +16,10 @@ const Contact = () => {
 
         // send data to server
         axios
-            .post("http://localhost:5000/messages", userMessage)
+            .post(
+                "https://enigmatic-refuge-60972.herokuapp.com/messages",
+                userMessage
+            )
             .then((res) => {
                 if (res.data.insertedId) {
                     alert("Message sent successfully");

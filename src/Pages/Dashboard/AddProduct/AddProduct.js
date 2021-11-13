@@ -15,7 +15,10 @@ const AddProduct = () => {
 
         // send data to server
         axios
-            .post("http://localhost:5000/products", product)
+            .post(
+                "https://enigmatic-refuge-60972.herokuapp.com/products",
+                product
+            )
             .then((res) => {
                 if (res.data.insertedId) {
                     alert("Product added successfully");

@@ -7,7 +7,9 @@ const Messages = () => {
     const [allMessages, setAllMessages] = useState([]);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/messages/admin/${user.email}`)
+        fetch(
+            `https://enigmatic-refuge-60972.herokuapp.com/messages/admin/${user.email}`
+        )
             .then((res) => res.json())
             .then((data) => setAllMessages(data))
             .catch((err) => console.log(err.message));
