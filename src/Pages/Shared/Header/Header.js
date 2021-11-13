@@ -22,6 +22,7 @@ const Header = () => {
                 <MainNavbar>
                     <NavItem href="/">Home</NavItem>
                     <NavItem href="/explore">Explore</NavItem>
+                    <NavItem href="/contact">Contact Us</NavItem>
                     {user.accessToken ? (
                         <>
                             <NavItem href="/dashboard">Dashboard</NavItem>
