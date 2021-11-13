@@ -18,7 +18,9 @@ const AllOrdersChild = ({
     const handleChange = (e) => {
         const status = e.target.value;
         axios
-            .put(`http://localhost:5000/orders/${_id}`, { status })
+            .put(`https://enigmatic-refuge-60972.herokuapp.com/orders/${_id}`, {
+                status,
+            })
             .then((res) => {
                 if (res.data.result.modifiedCount) {
                     alert("Status updated successfully\nUpdating UI");
