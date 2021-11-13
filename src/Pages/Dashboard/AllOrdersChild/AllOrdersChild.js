@@ -1,3 +1,4 @@
+import axios from "axios";
 import React from "react";
 import deleteOrder from "../../../utilities/deleteOrder";
 
@@ -12,6 +13,20 @@ const AllOrdersChild = ({
         product: { name: productName },
     },
 }) => {
+    // change status
+    const handleChange = (e) => {
+        const status = e.target.value;
+        axios
+            .put(`http://localhost:5000/orders/${_id}`, { status })
+            .then((res) => {
+                if (res.data.result.modifiedCount) {
+                    alert("Status updated successfully\nUpdating UI");
+                    setAllOrders(res.data.orders);
+                }
+            })
+            .catch((err) => console.log(err.message));
+    };
+
     // delete order
     const handleDeleteOrder = () => {
         deleteOrder(_id, allOrders, setAllOrders);
@@ -25,10 +40,10 @@ const AllOrdersChild = ({
             <td>{getDelivered}</td>
             <td>{status}</td>
             <td>
-                <select defaultValue={status} /* onChange={handleChange} */>
+                <select defaultValue={status} onChange={handleChange}>
                     <option value="Decline">Decline</option>
                     <option value="Pending">Pending</option>
-                    <option value="Approve">Approve</option>
+                    <option value="Shipped">Shipped</option>
                 </select>
             </td>
             <td>
