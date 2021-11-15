@@ -8,7 +8,7 @@ const Messages = () => {
 
     useEffect(() => {
         fetch(
-            `https://enigmatic-refuge-60972.herokuapp.com/messages/admin/${user.email}`
+            `${process.env.REACT_APP_SERVER_URL}/messages/admin/${user.email}`
         )
             .then((res) => res.json())
             .then((data) => setAllMessages(data))

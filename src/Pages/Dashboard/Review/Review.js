@@ -33,10 +33,7 @@ const Review = () => {
 
         // send data to server
         axios
-            .post(
-                "https://enigmatic-refuge-60972.herokuapp.com/reviews",
-                review
-            )
+            .post(`${process.env.REACT_APP_SERVER_URL}/reviews`, review)
             .then((res) => {
                 if (res.data.insertedId) {
                     alert("Review added successfully\nCheck Home");

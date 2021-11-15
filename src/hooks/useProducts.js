@@ -4,7 +4,7 @@ const useProducts = () => {
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
-        fetch("https://enigmatic-refuge-60972.herokuapp.com/products")
+        fetch(`${process.env.REACT_APP_SERVER_URL}/products`)
             .then((res) => res.json())
             .then((data) => setProducts(data))
             .catch((error) => console.log(error.message));

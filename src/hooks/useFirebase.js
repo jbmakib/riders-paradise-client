@@ -80,9 +80,7 @@ const useFirebase = () => {
 
     useEffect(() => {
         setIsAdmin(false);
-        fetch(
-            `https://enigmatic-refuge-60972.herokuapp.com/users/${user.email}`
-        )
+        fetch(`${process.env.REACT_APP_SERVER_URL}/users/${user.email}`)
             .then((res) => res.json())
             .then((data) => {
                 if (data.role === "admin") {
@@ -107,7 +105,7 @@ const useFirebase = () => {
     const saveUser = (email, displayName) => {
         const user = { email, displayName };
         axios
-            .post("https://enigmatic-refuge-60972.herokuapp.com/users", user)
+            .post(`${process.env.REACT_APP_SERVER_URL}/users`, user)
             .then((res) => {})
             .catch((err) => {});
     };

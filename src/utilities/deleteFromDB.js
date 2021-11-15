@@ -2,7 +2,7 @@
 const deleteFromDB = (id, state, setState, url) => {
     const proceed = window.confirm("Are you sure, you want to delete?");
     if (proceed) {
-        fetch(`https://enigmatic-refuge-60972.herokuapp.com${url}/${id}`, {
+        fetch(`${process.env.REACT_APP_SERVER_URL}${url}/${id}`, {
             method: "DELETE",
         })
             .then((res) => res.json())

@@ -23,7 +23,7 @@ const BookProduct = () => {
 
         // send data to server
         axios
-            .post("https://enigmatic-refuge-60972.herokuapp.com/orders", order)
+            .post(`${process.env.REACT_APP_SERVER_URL}/orders`, order)
             .then((res) => {
                 if (res.data.insertedId) {
                     alert("order added successfully\nWait for approve");
@@ -34,7 +34,7 @@ const BookProduct = () => {
     };
 
     useEffect(() => {
-        fetch(`https://enigmatic-refuge-60972.herokuapp.com/products/${_id}`)
+        fetch(`${process.env.REACT_APP_SERVER_URL}/products/${_id}`)
             .then((res) => res.json())
             .then((data) => setProduct(data))
             .catch((err) => setError("Invalid request to server"));

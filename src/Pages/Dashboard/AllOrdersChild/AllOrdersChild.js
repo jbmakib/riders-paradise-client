@@ -18,7 +18,7 @@ const AllOrdersChild = ({
     const handleChange = (e) => {
         const status = e.target.value;
         axios
-            .put(`https://enigmatic-refuge-60972.herokuapp.com/orders/${_id}`, {
+            .put(`${process.env.REACT_APP_SERVER_URL}/orders/${_id}`, {
                 status,
             })
             .then((res) => {
