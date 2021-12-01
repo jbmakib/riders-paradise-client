@@ -8,14 +8,12 @@
 
 ## Features
 
--   Admin Panel added
 -   This app is created by ReactJS
+-   Users can order products and manage them. They can write reviews to the site and send messages to admins.
+-   Admin can add and manage products. He is also able to see and manage users' orders and messages.
+-   Admin Panel added
 -   Used mongoDb as noSQL database for storing data
 -   Used node and express as server for send request from client side to database using server
--   You can add a new service
--   You can see only your order and can manage it
--   You can manage all of the order of the site as a admin. You can approve or decline any order
--   Delete Order Anytime
 -   Font Awesome Icon Pack Used ❤
 -   React Router Used 🔥
 -   Axios Used 🔥
